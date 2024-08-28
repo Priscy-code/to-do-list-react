@@ -1,6 +1,5 @@
-import { useeffect, useState} from 'react';
+import { useEffect, useState} from 'react';
 import useMessageStore from '../store/useMessageStore';
-import { useEffect } from 'react';
 
 function Snackbar(){
     const [message, setMessage] = useState('');
@@ -19,10 +18,11 @@ function Snackbar(){
                 }, 3000);
                 return () => clearTimeout(timer);
             },
-             state => [state.message, ststae.messageType]
+             state => [state.message, state.messageType]
         );
         return () => unsubscribe();
-    }, []);
+    }, 
+    []);
     return(
         <div className= {`fixed botton-4 left-1/2 transform -translate-x-1/2 ${messageType === 'sucess' ? 'bg-greeen-700': 'bg-red-700'} bg-opacity-70-p-4 rounded text-white`}>
             {message && <p>{message}</p>}

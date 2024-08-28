@@ -8,7 +8,7 @@ const TaskForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTask({id: Data.now(), title: text, completed:false});
+        addTask({id: Date.now(), title: text, completed:false});
         setText('');
     };
 

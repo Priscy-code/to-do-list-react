@@ -5,10 +5,10 @@ const TaskList = () => {
 
     return(
         <div>
-            <h2 className="text-lg font-semibold mb-4 text-grey-700">Task List</h2>
-            <ul className="list-none" p-0>
+            <h2 className="text-lg font-semibold mb-4 text-gray-700">Task List</h2>
+            <ul className="list-none p-0">
                 {tasks.map(task => (
-                    <li key={task.id} className={`flex items-center mb-2 p-2 rounded-md bg-gray-100`}>
+                    <li key={task.id} className="flex items-center mb-2 p-2 rounded-md bg-gray-100">
                         <span className={`flex-grow mr-4 ${task.completed ? 'line-through' : ''}`}>
                             {task.title}
                         </span>
